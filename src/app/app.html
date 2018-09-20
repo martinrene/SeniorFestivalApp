@@ -1,0 +1,26 @@
+<ion-menu [content]="content" type="overlay" (ionClose)="menuClosed()">
+
+    <ion-content>
+        <div ion-fixed>
+            <ion-grid class="menu-grid">
+                <ion-row>
+                    <ion-col *ngFor="let p of pages" col-6 text-center class="menu-cell" (click)="openPage(p)" tappable>
+                        <ion-icon [name]="p.icon" class="menu-icon" *ngIf="p.icon != 'fdf' && p.icon != 'personer'"></ion-icon>
+                        <img src="assets/images/fdflogo.svg" *ngIf="p.icon == 'fdf'" class="fake-menu-icon"/>
+                        <img src="assets/images/peoplemenuicon.png" *ngIf="p.icon == 'personer'" class="fake-menu-icon"/>
+                        <br/><span>{{ p.title }}</span>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+    </ion-content>
+</ion-menu>
+
+<ion-fab left bottom #fabmenu>
+    <button ion-fab color="primary" menuToggle><ion-icon name="menu"></ion-icon></button>
+    <ion-fab-list>
+    </ion-fab-list>
+</ion-fab>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

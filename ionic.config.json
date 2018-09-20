@@ -1,0 +1,14 @@
+{
+  "name": "SeniorFestivalApp",
+  "app_id": "bee82d26",
+  "type": "ionic-angular",
+  "proxies": [
+    {
+      "path": "/seniorfestival17api2",
+      "proxyUrl": "http://www.martinrene.dk/seniorfestival17api2/"
+    }
+  ],
+  "integrations": {
+    "cordova": {}
+  }
+}

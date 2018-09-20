@@ -1,0 +1,437 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+body, h1, h2, h3, h4, h5, li, p {
+  color: white;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 300;
+}
+
+p, li {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.small {
+  font-size: 11px;
+}
+
+ion-content {
+  color: white;
+}
+
+.toolbar-md-primary .toolbar-title-md, .toolbar-ios-primary .toolbar-title-ios {
+  color: #593e15;
+}
+
+
+.toolbar-title-md, .toolbar-title-ios {
+  color: #593e15;
+}
+
+.item-md,
+.item-ios {
+  color: #593e15;
+}
+/*
+.md .menu-inner,
+.ios .menu-inner {
+  background: rgba(206, 173, 66, 0.97);
+    color: #593e15;
+    width: 608px;
+    height: 200%;
+    border-radius: 50%;
+    position: absolute;
+    left: -304px;
+    top: -105%;
+}
+*/
+
+.md .menu-inner,
+.ios .menu-inner {
+    background: url('../assets/images/menubackground.svg');
+    background-size: 100% 100%;
+    background-color: transparent;
+}
+
+.ios ion-menu[type=overlay] .menu-inner {
+    box-shadow: none !important;
+}
+
+.content {
+  background: transparent;
+}
+/*
+.md .menu-inner  ion-header {
+  left: 304px;
+  margin-top: calc(100% + 64px);
+}
+
+.ios .menu-inner  ion-header {
+  left: 38px;
+  margin-top: calc(100% + 104px);
+}
+
+.md .menu-inner  .content,
+.ios .menu-inner  .content {
+  left: 304px;
+  margin-top: calc(100% + 64px);
+  width: 260px
+}
+
+.ios .menu-inner  .content {
+  margin-top: calc(100% + 104px);
+}
+*/
+
+.md .menu-inner .item-md,
+.ios .menu-inner .item-ios {
+  background: transparent;
+}
+
+
+.md .menu-inner .toolbar-background-md,
+.ios .menu-inner .toolbar-background-ios {
+  background: transparent;
+}
+
+.md .menu-inner .list-md .item-block .item-inner,
+.ios .menu-inner .list-ios .item-block .item-inner {
+  border-bottom-color: rgba(89, 62, 21, 0.4);
+}
+
+.fab-md-primary,
+.fab-ios-primary {
+  color: #593e15;
+}
+
+ion-app.md{
+  background-image: url('../assets/images/background.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: black;
+  background-size: cover;
+}
+
+ion-app.ios {
+  background-image: url('../assets/images/background.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: transparent;
+  background-size: cover;
+}
+
+.ios .ion-page.show-page ~ .nav-decor {
+  background-color: transparent;
+}
+
+.item-ios p {
+    color: white;
+    font-size: 1.7rem;
+}
+
+.menu-grid {
+  margin-top: 1%;
+  width: 70%;
+  margin-right: 30%;
+}
+
+.menu-cell {
+  padding-top: 11px;
+  padding-bottom: 11px;
+  color: #593e15;
+  font-size: 12px;
+}
+
+@media (min-height: 490px) {
+    .menu-grid {
+        margin-top: 10%;
+        width: 75%;
+        margin-right: 25%;
+    }
+
+    .menu-cell {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        color: #593e15;
+        font-size: 12px;
+    }
+}
+
+@media (min-height: 580px) {
+    .menu-grid {
+        margin-top: 10%;
+        width: 80%;
+        margin-right: 20%;
+    }
+
+    .menu-cell {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        color: #593e15;
+        font-size: 12px;
+    }
+}
+
+@media (min-height: 670px) {
+    .menu-grid {
+        margin-top: 10%;
+        width: 80%;
+        margin-right: 20%;
+    }
+
+    .menu-cell {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        color: #593e15;
+        font-size: 12px;
+    }
+}
+
+.menu-icon {
+  font-size: 4rem;
+  margin-bottom: 6px;
+}
+
+.fake-menu-icon {
+    height: 4rem;
+}
+
+.card .card-content {
+    color: white;
+}
+
+.card .card-content h2 {
+    color: white;
+    margin-top: 24px;
+    font-size: 2.2rem;
+}
+
+.card .card-content p {
+    color:white;
+}
+
+.card .card-content h2:first {
+    margin-top: 0px;
+}
+
+.card .card-content h4 {
+    color: white;
+    margin-top: 10px;
+    font-size: 1.6rem;
+}
+
+.card {
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 30px;
+}
+
+.card img {
+    max-height: 150px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+.card-title {
+    color: white;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.spaceright {
+    margin-right: 5px;
+}
+
+.tabs .tabbar {
+    padding-left: 20%;
+    background: transparent;
+    padding-bottom: 17px;
+}
+
+.tabs-ios .tab-button a span {
+    padding-bottom: 7px;
+}
+
+.tabs-md .tab-button-text {
+    padding-bottom: 7px;
+    color: #f4f4f4;
+}
+
+.tabs-ios .tab-button[aria-selected=true] span, .tabs-md .tab-button[aria-selected=true] span {
+    border-bottom-style: solid;
+    padding-bottom: 5px;
+    border-bottom-width: 2px;
+    color: rgb(206, 173, 66);
+}
+
+
+  .ion-item-transparent {
+    background-color: transparent;
+  }
+
+  .dashboard {
+    margin-top: 30px;
+  }
+
+  .schedule p {
+    color: rgb(255, 255, 255);
+    font-style: italic;
+    font-size: 13px;
+  }
+
+  .schedule .content {
+    width: 240px;
+    padding-left: 20px;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: rgba(255, 255, 255, 0.7);
+    padding-bottom: 20px;
+    padding-top: 20px;
+    align-self: flex-start;
+  }
+
+  .schedule .label {
+    align-self: flex-start;
+    margin-top: 20px;
+  }
+
+  .schedule .time-label {
+      margin-right: 0px;
+      padding-right: 0px;
+      width: 60px;
+      flex: none;
+      margin-top: 24px;
+  }
+
+  .schedule .time-label h2 {
+    width: 60px;
+  }
+
+
+  .schedule .time-label.label-md {
+      width: 70px;
+      text-align: right;
+      margin-top: 26px;
+  }
+
+  .schedule.frontpage .time-label.label-md {
+    width: 70px;
+    text-align: right;
+    margin-top: 21px;
+}
+
+  .schedule .time-label.label-md h2 {
+    width: 55px;
+
+  }
+
+  .schedule.list {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .schedule img {
+      width: 50px;
+      height: auto;
+      float: right;
+  }
+
+  .back-button {
+      margin-top: 10px;
+      margin-left: 5px;
+  }
+
+  .toolbar div {
+      background: transparent;
+      border-style: none !important;
+  }
+
+  .back-button-text {
+      margin-left: 5px;
+  }
+
+
+  .item-ios.activated, .item-md.activated {
+      background: none;
+  }
+
+  .close-icon {
+      color: rgb(206, 173, 66);
+      font-size: 4rem;
+      float: right;
+      margin-right: 0px;
+      margin-top: -10px;
+      margin-bottom: -10px;
+  }
+
+  .item-md h2 {
+      font-size: 2.2rem;
+  }
+
+  .participant-list .item{
+    background: transparent;
+    color: white;
+  }
+
+  .participant-list .kreds-betegnelse {
+      font-size: 1.2rem;
+  }
+
+  .participant-list .item-divider {
+    background: rgb(206, 173, 66);
+    color: #593e15;
+    font-size: 2rem;
+    font-weight: bold;
+    padding-top: 20px;
+  }
+
+  .participant-list .item-divider:first-child {
+      padding-top: 0px;
+  }
+
+  .participant-segment .segment-button.segment-activated {
+      color: #593e15 !important;
+  }
+
+
+  .toolbar .searchbar-ios .searchbar-input, .toolbar .searchbar-md .searchbar-input {
+      background-color: rgb(206, 173, 66);
+      color: black;
+  }
+
+  .toolbar .searchbar-ios .searchbar-input::-webkit-input-placeholder, .toolbar .searchbar-md .searchbar-input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #000;
+}
+.toolbar .searchbar-ios .searchbar-input:-moz-placeholder, .toolbar .searchbar-md .searchbar-input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #000;
+   opacity:  1;
+}
+.toolbar .searchbar-ios .searchbar-input::-moz-placeholder, .toolbar .searchbar-md .searchbar-input::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #000;
+   opacity:  1;
+}
+.toolbar .searchbar-ios .searchbar-input:-ms-input-placeholder, .toolbar .searchbar-md .searchbar-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #000;
+}
+.toolbar .searchbar-ios .searchbar-input::-ms-input-placeholder, .toolbar .searchbar-md .searchbar-input::-ms-input-placeholder { /* Microsoft Edge */
+   color:    #000;
+}

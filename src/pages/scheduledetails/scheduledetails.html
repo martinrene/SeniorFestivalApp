@@ -1,0 +1,34 @@
+<ion-content>
+    <ion-card [@squeezeanimation]="evt.state">
+        <ion-card-content>
+            <a (click)="navigateBack()"><ion-icon name="close" class="close-icon"></ion-icon></a>
+            <div style="clear: both;"></div>
+
+            <img src="{{ evt.getPictureUrl() }}" (error)="imageError($event)" />
+
+            <ion-card-title>
+                {{ evt.title }}
+            </ion-card-title>
+            <p>
+                {{ evt.description }}
+            </p>
+            <br/>
+            <h4>{{ evt.printStarttime() + (evt.location && evt.location.length > 0 ? ' &middot; ' + evt.location : '') }}</h4>
+
+            <h4 *ngFor="let link of links"><a href="{{ link.url }}" target="_blank">{{ link.text }}</a></h4>
+
+        </ion-card-content>
+        <ion-row no-padding>
+            <ion-col text-right>
+                <button ion-button clear small color="danger" icon-start (click)="addToMySchedule(evt)" [hidden]="isEventOnMySchedule(evt.id)" *ngIf="!type">
+                            <ion-icon name='star' class="spaceright"></ion-icon>
+                                Tilføj til mit program
+                        </button>
+                <button ion-button clear small color="danger" icon-start (click)="removeFromMySchedule(evt.id)" [hidden]="!isEventOnMySchedule(evt.id)">
+                            <ion-icon name='star-outline' class="spaceright"></ion-icon>
+                                Fjern fra mit program
+                        </button>
+            </ion-col>
+        </ion-row>
+    </ion-card>
+</ion-content>

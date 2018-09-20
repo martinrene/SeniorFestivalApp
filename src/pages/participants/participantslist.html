@@ -1,0 +1,34 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-searchbar #personSearchInput placeholder="Søg..." (ionInput)="setSearchTerm(personSearchInput.value)" (ionCancel)="setSearchTerm('')" (ionClear)="setSearchTerm('')" [showCancelButton]="true"></ion-searchbar>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-card>
+        <ion-list class="participant-list" [hidden]="sorting != 'navn'">
+            <ion-item-group *ngFor="let participantGroup of participantGroupsByName | async">
+                <ion-item-divider color="light">
+                    {{ participantGroup.group }}
+                </ion-item-divider>
+
+                <ion-item *ngFor="let person of participantGroup.persons">
+                    <ion-label>{{ person.navn }} <span class="kreds-betegnelse">{{ person.kreds.length > 0 ? '(FDF ' + person.kreds + ')' : '' }}</span></ion-label>
+                </ion-item>
+            </ion-item-group>
+        </ion-list>
+
+        <ion-list class="participant-list" [hidden]="sorting != 'kreds'">
+            <ion-item-group *ngFor="let participantGroup of participantGroupsByKreds | async">
+                <ion-item-divider color="light">
+                    {{ participantGroup.group }}
+                </ion-item-divider>
+
+                <ion-item *ngFor="let person of participantGroup.persons">
+                    <ion-label>{{ person.navn }} <span class="kreds-betegnelse">{{ person.kreds.length > 0 ? '(FDF ' + person.kreds + ')' : '' }}</span></ion-label>
+                </ion-item>
+            </ion-item-group>
+        </ion-list>
+
+        <p>&nbsp;</p>
+    </ion-card>
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-content padding>
+    <ion-list class="schedule" no-lines *ngIf="(eventsForDate | async).length > 0">
+        <ion-item class="ion-item-transparent" *ngFor="let evt of eventsForDate | async" text-wrap (click)="openEventDetailsPage(evt)"  tappable>
+            <ion-label class="label time-label">
+                <h2>{{ evt.printStarttimeShort() }}</h2>
+            </ion-label>
+            <div item-content class="content">
+                <img src="assets/events/{{ evt.id }}.{{ (evt.isJpg ? 'jpg': 'png') }}" (error)="imageError($event)" *ngIf="!evt.pictureUrl"
+                />
+                <img [src]="evt.pictureUrl" (error)="imageError($event)" *ngIf="evt.pictureUrl" />
+                <h2>{{ evt.title }}</h2>
+
+                <p>{{ evt.description }}</p>
+            </div>
+        </ion-item>
+    </ion-list>
+
+    <div [hidden]="(eventsForDate | async).length > 0" style="text-align: center; padding: 20px; margin-top:20%;">
+            <h1>
+                Lav dit eget program.
+            </h1>
+            <h3 style="margin-top: 30px;">Find det, du skal opleve i programmet og i aktiviteterne - <br/>og tilføj
+                dem til dit eget program.
+            </h3>
+        </div>
+</ion-content>

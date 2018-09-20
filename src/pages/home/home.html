@@ -1,0 +1,21 @@
+<ion-content padding>
+    <img src="assets/images/SF2017_logo.png" class="sflogo" />
+
+    <ion-list class="schedule frontpage" no-lines *ngIf="(eventsForNow | async).length > 0 && !(sfData | async).showFrontpageInfo">
+        <ion-item class="ion-item-transparent" *ngFor="let evt of eventsForNow | async" text-wrap>
+            <ion-label class="label time-label">
+                <h2>{{ evt.printStarttimeShort() }}</h2>
+            </ion-label>
+            <div item-content class="content">
+                <img [src]="evt.pictureUrl" (error)="imageError($event)" *ngIf="evt.pictureUrl" />
+                <h2>{{ evt.title }}</h2>
+            </div>
+        </ion-item>
+    </ion-list>
+
+    <div *ngIf="(sfData | async).showFrontpageInfo" [innerHTML]="(sfData | async)?.frontpageInfo" style="text-align: center">
+    </div>
+
+</ion-content>
+
+<img class="fdflogo" src="assets/images/fdflogo_hvid.gif"/>

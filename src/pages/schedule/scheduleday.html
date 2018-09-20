@@ -1,0 +1,17 @@
+<ion-content padding>
+    <ion-list class="schedule" no-lines>
+        <ion-item class="ion-item-transparent" *ngFor="let evt of eventsForDate | async" text-wrap (click)="openEventDetailsPage(evt)" tappable>
+            <ion-label class="label time-label">
+                <h2>{{ evt.printStarttimeShort() }}</h2>
+            </ion-label>
+            <div item-content class="content">
+                <img src="{{ evt.getPictureUrl() }}" (error)="imageError($event)"/>
+                <h2>{{ evt.title }}</h2>
+
+                <p>{{ evt.description }}</p>
+            </div>
+
+
+        </ion-item>
+    </ion-list>
+</ion-content>
